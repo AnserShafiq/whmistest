@@ -53,7 +53,7 @@ const Pictograms = ({ setPictogramsResult, quizDone }) => {
         ))}
       </div>
       <button
-        className='text-[1.1rem] text-red-one font-normal px-8 py-2 rounded-[50px] w-fit mt-4 mx-auto tracking-wide bg-red-one text-[#f7f7f7]'
+        className='text-[1.1rem] font-normal px-8 py-2 rounded-[50px] w-fit mt-4 mx-auto tracking-wide bg-red-one text-[#f7f7f7]'
         onClick={() => quizDone(true)}
       >
         Submit Test
