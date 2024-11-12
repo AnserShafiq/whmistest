@@ -132,5 +132,4 @@ export const pictograms = [
     },{
         name:'Bio Hazardous Infectious Materials',
         iconSource:"/whmis-quiz/Icons/10.png",Check:'',
-    },
-]
+    },]
