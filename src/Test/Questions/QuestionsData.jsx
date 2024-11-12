@@ -9,6 +9,7 @@ export const McqQuestions = [
             'Workplace Hazardous Material Identification Standards',
         ],
         Answer:'Workplace Hazardous Material Information System',
+        Check:'',
     },
     {
         // 2
@@ -20,6 +21,7 @@ export const McqQuestions = [
             'To standardize safety equipment in the workplace'
         ],
         Answer:'To prevent workplace injuries and promote safe handling of hazardous materials',
+        Check:'',
     },
     {
         // 3
@@ -29,7 +31,7 @@ export const McqQuestions = [
             'Safety Data Sheet (SDS)',
             'Work Schedule',
         ],
-        Answer:'Safety Data Sheet (SDS)',
+        Answer:'Safety Data Sheet (SDS)',Check:'',
     },
     {
         // 4
@@ -40,7 +42,7 @@ export const McqQuestions = [
             'WHMIS labels, pictograms, and SDS',
             'Training requirements only',
         ],
-        Answer:'WHMIS labels, pictograms, and SDS',
+        Answer:'WHMIS labels, pictograms, and SDS',Check:'',
     },
     {
         // 5
@@ -49,7 +51,7 @@ export const McqQuestions = [
             'True',
             'False',
         ],
-        Answer:'False',
+        Answer:'False',Check:'',
     },
     {
         // 6
@@ -59,7 +61,7 @@ export const McqQuestions = [
             'Wash immediately with water and seek medical attention if needed',
             'Wipe it off with a cloth',
         ],
-        Answer:'Wash immediately with water and seek medical attention if needed',
+        Answer:'Wash immediately with water and seek medical attention if needed',Check:'',
     },
     {
         // 7
@@ -69,7 +71,7 @@ export const McqQuestions = [
             'Evacuate the area and report the spill to a supervisor',
             'Ignore it and wait for another person to handle it',
         ],
-        Answer:'Evacuate the area and report the spill to a supervisor',
+        Answer:'Evacuate the area and report the spill to a supervisor',Check:'',
     },
     {
         // 8
@@ -80,7 +82,7 @@ export const McqQuestions = [
             'Both safety goggles and gloves',
             'None'
         ],
-        Answer:'Both safety goggles and gloves',
+        Answer:'Both safety goggles and gloves',Check:'',
     },{
         // 9
         Question:'If you improperly handle a substance with this corrosive pictogram, what could happen?',
@@ -90,7 +92,7 @@ export const McqQuestions = [
             'You might develop flu-like symptoms',
             'It could freeze on contact with skin'
         ],
-        Answer:'You could suffer skin burns or eye damage, and it could corrode metal surfaces',
+        Answer:'You could suffer skin burns or eye damage, and it could corrode metal surfaces',Check:'',
     },{
         // 10
         Question:'If you need to protect your hands from chemicals, which type of PPE should you use?',
@@ -100,38 +102,35 @@ export const McqQuestions = [
             'Safety googles',
             'Steel-toed boots'
         ],
-        Answer:'Chemical-resistant gloves',
+        Answer:'Chemical-resistant gloves',Check:'',
     },
 ];
 
 
 export const pictograms = [
     {
-        name:'Gas Cylinder',
-        iconSource:"/Icons/4.png",
+        name:'Flammable',
+        iconSource:"/whmis-quiz/Icons/2.png",Check:'',
     },{
-        name:'Flame',
-        iconSource:"/Icons/2.png",
+        name:'Environmental Hazard',
+        iconSource:"/whmis-quiz/Icons/9.png",Check:'',
     },{
-        name:'Exclamation Mark',
-        iconSource:"/Icons/8.png",
+        name:'Oxidizing Material',
+        iconSource:"/whmis-quiz/Icons/3.png",Check:'',
     },{
-        name:'Flame Over Circle',
-        iconSource:"/Icons/3.png",
+        name:'Acute Toxicity or Fatal Poisonous',
+        iconSource:"/whmis-quiz/Icons/6.png",Check:'',
     },{
-        name:'Skull and Crossbones',
-        iconSource:"/Icons/6.png",
+        name:'Corrosive Material',
+        iconSource:"/whmis-quiz/Icons/5.png",Check:'',
     },{
-        name:'Corrosion',
-        iconSource:"/Icons/5.png",
-    },{
-        name:'Exploding Bomb',
-        iconSource:"/Icons/1.png",
+        name:'Explosive Hazard ',
+        iconSource:"/whmis-quiz/Icons/1.png",Check:'',
     },{
         name:'Health Hazard',
-        iconSource:"/Icons/7.png",
+        iconSource:"/whmis-quiz/Icons/7.png",Check:'',
     },{
         name:'Bio Hazardous Infectious Materials',
-        iconSource:"/Icons/10.png",
+        iconSource:"/whmis-quiz/Icons/10.png",Check:'',
     },
 ]

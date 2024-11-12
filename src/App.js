@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Components/Header';
 import Home from './Home';
@@ -7,14 +7,20 @@ import Test from './Test/Test';
 const AppContent = () => {
   const location = useLocation();
   const [testCandidate, setTestCandidate] = useState(null)
+
+  useEffect(()=>{
+    if(testCandidate ===null && location.pathname !== '/whmis-quiz/'){
+      window.location.href = '/whmis-quiz/'
+    }
+  })
+
   return (
     <>
-      {/* Only display Header if the current path is not '/' */}
-      {location.pathname !== '/' && <Header />}
+      {location.pathname !== '/whmis-quiz/' && <Header />}
 
       <Routes>
-        <Route path='/' element={<Home setCandidate= {setTestCandidate}/>} />
-        <Route path='/whmis-quiz/' element={<Test user={testCandidate} />} />
+        <Route path='/whmis-quiz/' element={<Home setCandidate= {setTestCandidate}/>} />
+        <Route path='/whmis-quiz/quiz/' element={<Test user={testCandidate} />} />
         {/* Add more routes here as needed */}
       </Routes>
     </>

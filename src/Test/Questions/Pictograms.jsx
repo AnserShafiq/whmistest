@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { pictograms as PQ } from './QuestionsData';
 
-const Pictograms = ({ setPictogramsResult, quizDone }) => {
+const Pictograms = ({ setPictogramsResult, getCheckedPicts, quizDone }) => {
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  // const [CorrectCount, setCorrectCount] = useState(0);
+  const [CheckedPictograms, setCheckedPicts] = useState([])
 
   const handleOptionChange = (questionIndex, option) => {
     setSelectedAnswers(prevAnswers => ({
@@ -11,24 +13,44 @@ const Pictograms = ({ setPictogramsResult, quizDone }) => {
     }));
   };
 
-  useEffect(() => {
-    let newScore = 0;
-    PQ.forEach((question, index) => {
-      if (selectedAnswers[index] === question.name) {
-        newScore += 1;
-      }
-    });
-    setPictogramsResult({ pictScore: newScore });
-  }, [selectedAnswers, setPictogramsResult]);
+
+ useEffect(() => {
+  let newScore = 0
+    
+    setCheckedPicts( PQ.map((question, index) => {
+      const isCorrect = selectedAnswers[index] === question.name;
+      const result = {
+        Name: question.name,
+        GivenAnswer: selectedAnswers[index],
+        Check: isCorrect ? 'Correct' : 'Incorrect',
+      };
+      
+      if (isCorrect) newScore += 1;
+      return result;
+    }));
+    setPictogramsResult({ pictScore: newScore});
+ }, [ setCheckedPicts, setPictogramsResult,selectedAnswers])
+
+  const handleQuizDone = (e) => {
+    // console.log(e)
+    e.preventDefault();
+    
+    console.log(CheckedPictograms)
+    getCheckedPicts(CheckedPictograms)
+
+    quizDone(true)
+
+  }
+
 
   return (
     <div className='flex flex-col w-[100%] lg:w-[80%] mx-auto shadow-md pt-6 pb-12 px-4 lg:px-10 max-h-full lg:max-h-[84.8vh] lg:overflow-y-scroll'>
       <h3 className='text-[1.3rem] font-[600] text-red-two mb-6'>Guess the name of all pictograms.</h3>
-      <div className='grid grid-cols-1 lg:grid-cols-[1fr,1fr,1fr]'>
+      <div className='grid grid-cols-1 lg:flex lg:flex-row lg:justify-center lg:flex-wrap'>
         {PQ.map((question, index) => (
           <div key={index} className=''>
-            <div className='flex flex-col justify-start items-start border-[1px] p-3 border-black'>
-              <label className='text-[1.1rem] font-[600] tracking-wide mr-5'>{`${index + 1})`}</label>
+            <div className='flex flex-col justify-start items-start m-[20px] bg-[#0000000a] rounded-[30px] shadow-sm p-3'>
+              <label className='text-[1.1rem] font-[600] tracking-wide ml-2 mt-1'>{`${index + 1})`}</label>
               <div className='flex flex-col items-center w-full py-6'>
                 <img className='h-[130px] mb-8' src={question.iconSource} alt={`Pictogram Question# ${index + 1}`} />
                 <select
@@ -54,7 +76,7 @@ const Pictograms = ({ setPictogramsResult, quizDone }) => {
       </div>
       <button
         className='text-[1.1rem] font-normal px-8 py-2 rounded-[50px] w-fit mt-4 mx-auto tracking-wide bg-red-one text-[#f7f7f7]'
-        onClick={() => quizDone(true)}
+        onClick={handleQuizDone}
       >
         Submit Test
       </button>

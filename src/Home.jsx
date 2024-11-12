@@ -14,7 +14,7 @@ const Home = ({setCandidate}) => {
         e.preventDefault();
         if( name && email ){
             setCandidate({name,email})
-            navigate('/whmis-quiz/')
+            navigate('/whmis-quiz/quiz/')
         }else if( (name && !email) || (!name && email) || (!name && !email)){
             alert('Please enter all fields')
         }
