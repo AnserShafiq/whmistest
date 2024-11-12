@@ -22,12 +22,12 @@ const Home = ({setCandidate}) => {
     };
 
     return (
-        <div className='flex flex-col w-[100%] h-[100vh] border-2 border-black justify-center items-center'>
+        <div className='flex flex-col w-[94%] lg:w-[100%] mx-auto h-[100vh] justify-center items-center'>
             <img className='w-[15rem] mb-4' src={Logo} alt='WHMIS Test By Unique Employment Solutions' />
             <h2 className='text-[2rem] capitalize font-semibold tracking-wider text-center leading-tight'>
-                Welcome to WHMIS Quiz by <br /> <span className='text-red-one'>Unique Employment Solutions</span>
+                Welcome to WHMIS Quiz by <br className='hidden lg:block' /> <span className='text-red-one'>Unique Employment Solutions</span>
             </h2>
-            <div className='flex flex-col mt-4 px-10 py-5 rounded-[30px] shadow-md bg-[#00000011] w-[500px] '>
+            <div className='flex flex-col mt-4 px-5 lg:px-10 py-5 rounded-[30px] shadow-md bg-[#00000011] w-[100%] lg:w-[500px] '>
                 <h3 className='text-0.8rem text-red-two mb-4' >Enter the following details to start the WHMIS Quiz:</h3>
                 <div className='flex flex-col mb-4'>
                     <label className='text-[1.1rem] font-[600] capitalize'>Full Name:</label>

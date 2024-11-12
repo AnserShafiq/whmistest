@@ -24,7 +24,7 @@ const Pictograms = ({ setPictogramsResult, quizDone }) => {
   return (
     <div className='flex flex-col w-[100%] lg:w-[80%] mx-auto shadow-md pt-6 pb-12 px-4 lg:px-10 max-h-full lg:max-h-[84.8vh] lg:overflow-y-scroll'>
       <h3 className='text-[1.3rem] font-[600] text-red-two mb-6'>Guess the name of all pictograms.</h3>
-      <div className='grid grid-cols-[1fr,1fr,1fr]'>
+      <div className='grid grid-cols-1 lg:grid-cols-[1fr,1fr,1fr]'>
         {PQ.map((question, index) => (
           <div key={index} className=''>
             <div className='flex flex-col justify-start items-start border-[1px] p-3 border-black'>
